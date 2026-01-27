@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact | The Pundit Place</title>
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=6Lcqx0gsAAAAABIs-t0w17TMrwSyRtpQpP4151hv"></script>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Start a Conversation</h1>
+      <p>If you are planning a new venture or preparing your organisation for its next stage of growth, we would be happy to explore how we can help.</p>
+    </div>
+  </section>
+
+  <section class="section contact-section">
+    <div class="container contact-grid">
+
+      <div class="contact-copy">
+        <h2>Get in Touch</h2>
+        <p>Use the form to share a brief overview of your situation.</p>
+      </div>
+
+      <div class="contact-card">
+
+        <form id="contact-form" class="contact-form">
+          <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Organisation
+            <input type="text" name="organisation">
+          </label>
+
+          <label>
+            How can we help?
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <button type="submit" class="btn-primary">
+            Submit Enquiry
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js"></script>
+
+<script>
+const form = document.getElementById("contact-form");
+let submitting = false;
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (submitting) return;
+  submitting = true;
+
+  grecaptcha.ready(function () {
+    grecaptcha.execute("6Lcqx0gsAAAAABIs-t0w17TMrwSyRtpQpP4151hv", {
+      action: "contact"
+    }).then(function (token) {
+
+      const formData = new FormData(form);
+      formData.append("g-recaptcha-response", token);
+
+      fetch("/contact-submit.php", {
+        method: "POST",
+        body: formData
+      })
+      .then(async res => {
+        const text = await res.text();
+        if (!res.ok) throw new Error(text);
+        showThankYou();
+        form.reset();
+      })
+      .catch(err => {
+        alert(err.message || "Submission failed. Please try again later.");
+      })
+      .finally(() => {
+        submitting = false;
+      });
+
+    });
+  });
+});
+
+function showThankYou() {
+  document.getElementById("thank-you-modal").classList.remove("hidden");
+}
+</script>
+
+
+
+<div id="thank-you-modal" class="thank-you-modal hidden">
+  <div class="thank-you-box">
+    <h2>Thank you</h2>
+    <p>Your message has been received. We’ll be in touch shortly.</p>
+    <button onclick="this.closest('.thank-you-modal').classList.add('hidden')" class="btn-primary">
+      Close
+    </button>
+  </div>
+</div>
+
+</body>
+</html>

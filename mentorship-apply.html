@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Apply for Mentorship | The Pundit Place</title>
+
+  <meta name="description"
+        content="Apply for The Pundit Place Business Analyst Mentorship Programme. Limited seats, structured learning, and hands-on guidance." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Apply for Mentorship | The Pundit Place" />
+  <meta property="og:description"
+        content="Submit your application for the Business Analyst Mentorship Programme at The Pundit Place." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thepunditplace.com/mentorship-apply.html" />
+  <meta property="og:image" content="https://thepunditplace.com/assets/logo.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="header"></div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Apply for the Mentorship Programme</h1>
+      <p>
+        Please complete the application below. We review each submission
+        carefully to ensure the right fit and commitment.
+      </p>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM -->
+  <section class="section contact-section">
+    <div class="container contact-grid">
+
+      <!-- COPY -->
+      <div class="contact-copy">
+        <h2>Before You Apply</h2>
+        <p>
+          This programme is intentionally structured and hands-on.
+          We are looking for candidates who are serious about developing
+          real-world Business Analysis capability.
+        </p>
+        <p>
+          Applications are reviewed on a rolling basis. Shortlisted
+          candidates may be contacted for a brief follow-up conversation.
+        </p>
+      </div>
+
+      <!-- FORM CARD -->
+      <div class="contact-card">
+        <form
+          name="mentorship-application"
+          method="POST"
+          data-netlify="true"
+          class="contact-form">
+
+          <input type="hidden" name="form-name" value="mentorship-application">
+
+          <label>
+            Full Name
+            <input type="text" name="name" required>
+          </label>
+
+          <label>
+            Email Address
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Current Role / Background
+            <input type="text" name="background" required>
+          </label>
+
+          <label>
+            Why are you applying for this programme?
+            <textarea name="motivation" rows="5" required></textarea>
+          </label>
+
+          <label>
+            What do you hope to gain from the mentorship?
+            <textarea name="expectations" rows="4" required></textarea>
+          </label>
+
+          <button type="submit" class="btn-primary">
+            Submit Application
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Scripts -->
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

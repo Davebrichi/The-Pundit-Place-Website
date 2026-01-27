@@ -1,1 +1,1 @@
-# The-Pundit-Place-Website
+# thepunditplace
