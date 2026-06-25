@@ -1,0 +1,24 @@
+{
+  "name": "the-pundit-place-website",
+  "version": "1.0.0",
+  "description": "This repository contains the public marketing website for The Pundit Place (TPP).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicdcosta21/The-Pundit-Place-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Nicdcosta21/The-Pundit-Place-Website/issues"
+  },
+  "homepage": "https://github.com/Nicdcosta21/The-Pundit-Place-Website#readme",
+  "dependencies": {
+    "nodemailer": "^9.0.1"
+  }
+}
