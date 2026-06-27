@@ -3,6 +3,13 @@
   functions = "netlify/functions"
 
 [[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
+conditions = {Role = ["admin"]}
+
+[[redirects]]
   from = "/contact-submit.php"
   to = "/.netlify/functions/contact"
   status = 301
